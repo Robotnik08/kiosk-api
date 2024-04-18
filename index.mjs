@@ -1,13 +1,15 @@
-import express from 'express';
+import express, { response } from 'express';
+import config from './config.js';
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-    }
-);
+const port = config.port || 3000;
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-    }
-);
+app.get('/', (req, res) => {
+    res.json({ response: 'Hello World' });
+});
+
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`); 
+});

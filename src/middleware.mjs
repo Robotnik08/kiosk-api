@@ -6,7 +6,7 @@ export class MiddleWare {
     }
 
     authenticate(req, res, next) {
-        const API_KEY = req.headers['key'];
+        const API_KEY = req.headers.key ?? "";
         if (API_KEY === config.API_KEY) {
             next();
         } else {

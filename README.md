@@ -8,6 +8,10 @@ REST api for a kiosk in a fast food restaurant
 4. edit the config.js file with your database credentials
 5. Run `npm start` to start the server
 
+## Usage
+When trying to use the API, the header must contain the right api key.<br> 
+The key must be sent in the header as `key`. The value of the key is stored in the config.js file and can be changed there.<br>
+
 ## Endpoints
 
 ### GET:

@@ -36,7 +36,7 @@ app.get('/api/ingredients/category/:id', (req, res, next) => {
 
 app.post('/api/order', bodyParser.json(), responseHandler.postOrder);
 
-app.get('/api/order', responseHandler.getOrders);
+app.get('/api/orders', responseHandler.getOrders);
 
 
 app.listen(port, () => {

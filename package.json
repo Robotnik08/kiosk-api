@@ -1,9 +1,12 @@
 {
-  "scripts":{
+  "scripts": {
     "start": "node index.mjs"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7"
   },
   "type": "module"
 }

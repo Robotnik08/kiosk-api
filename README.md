@@ -29,5 +29,5 @@ Requires a JSON object in the req body with the following format: <br>
         }
     ]
 }
-```<br>
+```
 Sends back the order id

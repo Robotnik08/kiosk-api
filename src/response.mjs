@@ -89,6 +89,11 @@ export class ResponseHandler {
         const order = req.body;
         let id = -1;
         if (order) {
+            if (!order.items || order.items.length === 0) {
+                res.status(400).send({error: true, msg: "Invalid order"});
+                return;
+            }
+
             connection.query("INSERT INTO `orders` () VALUES ();", (err, results, fields) => {
                 if (err) {
                     console.error("Error querying database: " + err.stack);
@@ -105,8 +110,7 @@ export class ResponseHandler {
                 res.send({id: id}).status(201);
     
                 order.items.forEach(item => {
-                    console.log(item);
-                    connection.query("INSERT INTO `order_details` (`order_id`, `product_id`, `quantity`) VALUES (?, ?, ?);", [id, item.id, item.quantity], (err, results, fields) => {
+                    connection.query("INSERT INTO `order_details` (`order_id`, `product_id`, `quantity`) VALUES (?, ?, ?);", [id, item.id ?? -1, item.quantity ?? 1], (err, results, fields) => {
                         if (err) {
                             console.error("Error querying database: " + err.stack);
                             return;

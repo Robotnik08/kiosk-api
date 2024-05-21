@@ -4,5 +4,6 @@ export default {
     "db_user": "root",
     "db_password": "",
     "db_port": 3306,
-    "db_name": "kiosk-api"
+    "db_name": "kiosk-api",
+    "API_KEY": "1234"
 }

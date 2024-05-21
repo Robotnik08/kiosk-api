@@ -1,11 +1,12 @@
 import { createConnection } from "mysql2";
+import config from './config.js';
 
 const connection = createConnection({
-    host: "localhost",
-    user: "root",
-    port: 3306,
-    password: "",
-    database: "kiosk-api"
+    host: config.db_host,
+    user: config.db_user,
+    port: config.db_port,
+    password: config.db_password,
+    database: config.db_name
 });
 
 export class ResponseHandler {

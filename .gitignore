@@ -3,5 +3,3 @@ node_modules
 *.exe
 test.*
 *.test
-
-data.json
